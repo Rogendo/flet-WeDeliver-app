@@ -5,6 +5,8 @@ def main(page: ft.Page):
     def check_item_clicked(e):
         e.control.checked = not e.control.checked
         page.update()
+        page.vertical_alignment = ft.MainAxisAlignment.CENTER
+        page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
     page.appbar = ft.AppBar(
         leading=ft.Icon(ft.icons.DELIVERY_DINING,size=60),
@@ -34,6 +36,35 @@ def main(page: ft.Page):
             ),
         ],
     )
+    page.add(
+    ft.Row(
+        [
+            ft.Container(
+                content=ft.Text("Non clickable"),
+                margin=10,
+                padding=10,
+                alignment=ft.alignment.center,
+                bgcolor=ft.colors.AMBER,
+                width=150,
+                height=150,
+                border_radius=10,
+            ),
+            ft.Container(
+                content=ft.Text("Clickable without Ink"),
+                margin=10,
+                padding=10,
+                alignment=ft.alignment.center,
+                bgcolor=ft.colors.GREEN_200,
+                width=150,
+                height=150,
+                border_radius=10,
+                on_click=lambda e: print("Clickable without Ink clicked!"),
+            ),
+            
+        ],
+        alignment=ft.MainAxisAlignment.CENTER,
+    ),
+)
 
     page.navigation_bar = ft.NavigationBar(
         destinations=[
