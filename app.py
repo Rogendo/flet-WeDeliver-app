@@ -1,5 +1,6 @@
 import flet
 from flet import *
+from appbar import jumbotron
 
 def main(page:Page):
   page.title=("We.Deliver")
@@ -9,7 +10,7 @@ def main(page:Page):
   page.add(
 
   #appbar
-    
+  jumbotron,
 
   #navigation bar
 
@@ -17,4 +18,4 @@ def main(page:Page):
 
   )
 
-flet.app(target=main)
+flet.app(target=main, assets_dir="assets")
